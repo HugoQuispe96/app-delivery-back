@@ -16,7 +16,7 @@ const udpateRestaurant = async (req, res) => {
 const findRestaurant = async (req, res) => {
   try {
     let response = await Restaurant.findOneForID(req.params.id);
-    res.status(200).json({ 'restorant': response });
+    res.status(200).json({ 'restaurant': response });
     return;
   }
   catch (error) {
@@ -28,7 +28,7 @@ const findRestaurant = async (req, res) => {
 const findRestaurantComplete = async (req, res) => {
   try {
     let response = await Restaurant.findOneForIDCompplete(req.params.id);
-    res.status(200).json({ 'restorant': response });
+    res.status(200).json({ 'restaurant': response });
     return;
   }
   catch (error) {
