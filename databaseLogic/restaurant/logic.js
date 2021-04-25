@@ -1,6 +1,8 @@
 import Restaurant from './scheme.js';
 import Category from '../categoria/scheme.js';
 import Product from '../producto/scheme.js';
+import SocialNetwork from '../red_social/scheme.js';
+import Horario from '../horario/scheme.js';
 
 const findOneForID = async (id) => {
   let response = await Restaurant.findByPk(id);
@@ -21,10 +23,14 @@ const updateOne = async (id, data) => {
 
 const findOneForIDCompplete = async (id) => {
   let response = await Restaurant.findByPk(id, {
-    include: {
+    include: [{
       model: Category,
       include: Product
-    }
+    }, {
+      model: SocialNetwork
+    }, {
+      model: Horario
+    }]
   });
   return response;
 }
