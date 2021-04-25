@@ -6,10 +6,11 @@ import { dirname } from 'path';
 
 const __dirname = dirname(__filename);
 
-const { EMAIL_USER, EMAIL_PASS, EMAIL_SERVICE, EMAIL_FROM, URL_FRONTEND } = process.env;
-
+const { EMAIL_USER, EMAIL_PASS, EMAIL_HOST, EMAIL_PORT, EMAIL_SECURE, EMAIL_FROM, URL_FRONTEND } = process.env;
 const transporter = nodemailer.createTransport({
-  service: EMAIL_SERVICE,
+  host: EMAIL_HOST,
+  port: EMAIL_PORT,
+  secure: EMAIL_SECURE,
   auth: {
     user: EMAIL_USER,
     pass: EMAIL_PASS

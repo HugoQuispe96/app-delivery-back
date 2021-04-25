@@ -67,18 +67,9 @@ const recoverPassword = async (req, res) => {
       return;
     }
     else {
-      const { EMAIL_USER, EMAIL_PASS, EMAIL_SERVICE, EMAIL_FROM, URL_FRONTEND } = process.env;
-      let entorno = {
-        user: EMAIL_USER,
-        pass: EMAIL_PASS,
-        service: EMAIL_SERVICE,
-        from: EMAIL_FROM,
-        url: URL_FRONTEND
-      }
       res.status(500).json({
         'exito': false,
         'error': responseMail,
-        entorno,
         'mensaje': 'No se pudo enviar el correo de recuperación.'
       });
       return;
