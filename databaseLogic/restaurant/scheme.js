@@ -46,7 +46,11 @@ const Restaurant = sequelize.define('restaurant', {
   latitud: {
     type: DataTypes.DECIMAL(11, 8),
     allowNull: false
-  }
+  },
+  valor_delivery: {
+    type: DataTypes.INTEGER,
+    allowNull: false
+  },
 }, {
   timestamps: false,
   freezeTableName: true

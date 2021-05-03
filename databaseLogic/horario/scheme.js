@@ -26,6 +26,10 @@ const Horario = sequelize.define('horario', {
   esta_disponible: {
     type: DataTypes.BOOLEAN,
     allowNull: false
+  },
+  nro_dia: {
+    type: DataTypes.INTEGER,
+    allowNull: false
   }
 }, {
   timestamps: false,
