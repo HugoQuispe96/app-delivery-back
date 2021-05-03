@@ -4,6 +4,7 @@ messageValidator.regex = 'El campo :attribute debe cumplir el patron HH:MM';
 const validateUdpateHorario = (req, res, next) => {
   let horario = {};
   req.body.dia && (horario.dia = req.body.dia);
+  req.body.nro_dia && (horario.nro_dia = req.body.nro_dia);
   req.body.hora_inicio && (horario.hora_inicio = req.body.hora_inicio);
   req.body.hora_fin && (horario.hora_fin = req.body.hora_fin);
   req.body.esta_disponible && (horario.esta_disponible = req.body.esta_disponible);

@@ -12,6 +12,8 @@ const validateUdpateRestaurant = (req, res, next) => {
   req.body.direccion && (restaurant.direccion = req.body.direccion);
   req.body.longitud && (restaurant.longitud = req.body.longitud);
   req.body.latitud && (restaurant.latitud = req.body.latitud);
+  req.body.valor_delivery && (restaurant.valor_delivery = req.body.valor_delivery);
+
   let rules = {
     nombre: 'max:45|string',
     url_logo: 'max:250|url',
@@ -22,6 +24,7 @@ const validateUdpateRestaurant = (req, res, next) => {
     direccion: 'max:45|string',
     longitud: 'numeric',
     latitud: 'numeric',
+    valor_delivery: 'required|min:0|numeric',
   };
   let validation = new Validator(restaurant, rules, messageValidator);
   if (validation.passes()) {
